@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Add New Expense"
+        android:id="@+id/expense_Add"/>
+
+    <item android:title="View All Expense"
+        android:id="@+id/expense_View"/>
+    <item android:title="Add More Budget"
+        android:id="@+id/expense_budget_Add"/>
+
+
+</menu>

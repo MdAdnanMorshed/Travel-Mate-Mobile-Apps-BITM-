@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coverlogin1"
+    tools:context=".LoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="65dp"
+            android:id="@+id/statusTV"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:textSize="10dp"
+
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:textColor="@color/colorAccent" />
+
+        <EditText
+            android:id="@+id/mailLoginET"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="E-mail Address"
+            android:gravity="center"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:background="#ccf7f6f6"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/passwordloginET"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:gravity="center"
+            android:background="#ccf7f6f6"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"/>
+
+
+        <Button
+            android:id="@+id/logInBTN"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not registered yet?"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/regInBTN"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

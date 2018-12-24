@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/coverlogin1"
+    tools:context=".RegisterFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/statusTV"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reister Status"
+            android:gravity="center"
+           android:textColor="#FFB77576"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="User Name"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="3dp"
+            android:background="#75b78d"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#fff"
+            android:inputType="textPersonName"
+            android:gravity="center"/>
+
+
+        <EditText
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:hint="Mobile Number"
+            android:layout_marginBottom="3dp"
+            android:textColor="#fff"
+            android:background="#75b78d"
+            android:inputType="number"
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/mailET"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Mail"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#fff"
+            android:background="#75b78d"
+
+            android:gravity="center"/>
+        <EditText
+            android:id="@+id/passET"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textColor="#fff"
+            android:hint="Password"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="5dp"
+            android:background="#75b78d"
+            android:inputType="numberPassword"
+            android:gravity="center"/>
+
+
+        <Button
+            android:id="@+id/registerBTN"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Register"
+            android:textAllCaps="false"
+
+            />
+
+        <Button
+            android:id="@+id/signInBTN"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="Sign In"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+
+</FrameLayout>

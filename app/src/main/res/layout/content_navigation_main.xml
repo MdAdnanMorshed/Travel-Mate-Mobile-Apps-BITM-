@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".NavigationMainActivity"
+    tools:showIn="@layout/app_bar_navigation_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Project Name :Travel Mate "
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Group Name :Novo Coder ( MAD 48 )"
+        android:layout_marginBottom="20dp"
+        android:textColor="#f51229"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Member Name (Leader) :Jafrina Jui"
+        android:gravity="center"
+        android:textColor="#FF001122"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Member Name :Nymph Promi"
+        android:gravity="center"
+        android:textColor="#FF001122"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Member Name :Nazmun Nahar Akhi"
+        android:gravity="center"
+        android:textColor="#FF001122"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Member Name :Md.Adnan Morshed"
+        android:gravity="center"
+        android:textColor="#FF001122"
+        />
+
+
+</LinearLayout>
