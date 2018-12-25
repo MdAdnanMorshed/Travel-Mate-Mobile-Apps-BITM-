@@ -33,7 +33,6 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".weatherCurrentActivity" />
         <activity android:name=".weatherForecastActivity" />
-        <activity android:name=".NearByActivity" />
         <activity
             android:name=".NearBYActivity2"
             android:label="@string/title_activity_near_by2"></activity>

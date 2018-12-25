@@ -81,7 +81,7 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
         userIDRef = userRef.child(user.getUid());
 
 
-
+    //************  Database Data Show  ******************************
         userIDRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -90,8 +90,7 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
                     Events event = d.getValue(Events.class);
                     events.add(event);
                 }
-
-                adapter.eventUpdate(events);
+                    adapter.eventUpdate(events);
             }
 
             @Override
@@ -111,19 +110,9 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
         recyclerView.setLayoutManager(layoutManager);
         adapter = new EventRecyclerAdpater(getActivity(), events, this);
         recyclerView.setAdapter(adapter);
-       /* logout=eventView.findViewById(R.id.logoutBTN);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(auth != null){
-                    auth.signOut();
-                    fabAction.Logout();
 
-                }
-            }
-        });
-        */
         setHasOptionsMenu(true);
+      // ****************   Create Event ***************************
         fab = eventView.findViewById(R.id.fabBTN);
       fab.setOnClickListener(new View.OnClickListener() {
           @Override
@@ -145,17 +134,6 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
           }
       });
 
-      /*
-         logoutBtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-        if(auth != null){
-        auth.signOut();
-        }
-        }
-        });
-         setHasOptionsMenu(true);
-      */
         return eventView;
      }
 
@@ -173,8 +151,8 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
             Intent navigationIntent=new Intent(context,EventCreateListFragment.class);
             startActivity(navigationIntent);
             return true;
-
         }
+
         if (id == R.id.logout) {
             if(auth != null){
                 auth.signOut();
@@ -182,8 +160,8 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
             }
             return true;
         }
-        if (id == R.id.othersMenu) {
 
+        if (id == R.id.othersMenu) {
             Intent navigationIntent=new Intent(context,NavigationMainActivity.class);
             startActivity(navigationIntent);
             return true;
@@ -191,16 +169,18 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
         return super.onOptionsItemSelected(item);
     }
 
+    //*************************   Event Edit ****************************************
     @Override
     public void EventEdit(String eventId) {
-        //Events event = new Events(eventId, "Bangladesh Tour", "30/11/2018","500",);
-        //userIDRef.child(eventId).setValue(event);
+        Toast.makeText(context, "Edit Event ID "+eventId, Toast.LENGTH_SHORT).show();
+        Events event = new Events(eventId, "Bangladesh Tour","Dhaka","Ctg","25/2/2018",500);
+        userIDRef.child(eventId).setValue(event);
         Toast.makeText(context, "Edit is Successfull..", Toast.LENGTH_SHORT).show();
-
 
        // fabAction.evetnFabAdd();  //70 % task baki ase
     }
 
+    //******************** Event Delete **************************************
     @Override
     public void EventDelete(String eventId) {
         Toast.makeText(context, "Event ID"+eventId, Toast.LENGTH_SHORT).show();
@@ -211,12 +191,9 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
     public void EventInfo(String eventId) {
         fabAction.eventinfo();
     }
-
     interface  OnActiveFloatingAction{
         void  evetnFabAdd();
         void Logout();
         void eventinfo();
-
     }
-
 }
