@@ -61,8 +61,7 @@ public class NearBYActivity2 extends AppCompatActivity implements OnMapReadyCall
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_near_by2);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
          maptype=findViewById(R.id.mapTypeSP);
         ArrayAdapter<String> mapty=new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,googleMapType);
         maptype.setAdapter(mapty);
@@ -70,16 +69,6 @@ public class NearBYActivity2 extends AppCompatActivity implements OnMapReadyCall
         mapFragment.getMapAsync(this);
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -87,11 +76,6 @@ public class NearBYActivity2 extends AppCompatActivity implements OnMapReadyCall
         mMap.setOnCameraIdleListener(clusterManager);
         mMap.setOnMarkerClickListener(clusterManager);
         mMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN);
-
-
-
-
-
 
 
         // Add a marker in Sydney and move the camera
@@ -144,9 +128,6 @@ public class NearBYActivity2 extends AppCompatActivity implements OnMapReadyCall
     }
 
     public void showPlacePickerDialog(View view) {
-
-
-
     PlacePicker.IntentBuilder builder = new PlacePicker.IntentBuilder();
 
         try {
@@ -156,9 +137,7 @@ public class NearBYActivity2 extends AppCompatActivity implements OnMapReadyCall
         } catch (GooglePlayServicesNotAvailableException e) {
             e.printStackTrace();
         }
-
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

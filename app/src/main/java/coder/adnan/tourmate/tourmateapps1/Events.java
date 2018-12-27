@@ -7,7 +7,7 @@ public class Events {
    private String eventDestination;
    private String eventSDate;
     private String eventEDate;
-   private double eventBudget;
+   private int eventBudget;
 
     //public Events(String keyId, String eventName, String eventlocation, String eventdestination, String evetnDate, Double aDouble) {
     //}
@@ -15,7 +15,7 @@ public class Events {
     public Events() {
     }
 
-    public Events(String eventId, String eventName, String eventLocation, String eventDestination, String eventSDate, double eventBudget) {
+    public Events(String eventId, String eventName, String eventLocation, String eventDestination, String eventSDate, int eventBudget) {
         this.eventId = eventId;
         this.eventName = eventName;
         this.eventLocation = eventLocation;
@@ -106,11 +106,11 @@ public class Events {
         this.eventEDate = eventEDate;
     }
 
-    public double getEventBudget() {
+    public int getEventBudget() {
         return eventBudget;
     }
 
-    public void setEventBudget(double eventBudget) {
+    public void setEventBudget(int eventBudget) {
         this.eventBudget = eventBudget;
     }
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+
+    <EditText
+        android:id="@+id/eventET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Event Name" />
+    <EditText
+        android:id="@+id/slocationET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="StarLocation" />
+    <EditText
+        android:id="@+id/elocationalET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="End Location" />
+
+    <EditText
+        android:id="@+id/eventDatelET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date" />
+    <EditText
+        android:id="@+id/budgetET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Budget" />
+
+    <Button
+        android:id="@+id/updateEventBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:textAllCaps="false"
+        />
+
+</LinearLayout>

@@ -17,25 +17,50 @@
             android:layout_height="wrap_content"
             android:text="Dhaka Tour"
             android:gravity="center"
-            />
+            android:textSize="35dp"
+            android:textColor="#660000" />
 
-        <TextView
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Budget (500/15000) Taka"
-            android:gravity="center"
-            />
+            android:weightSum="3">
+            <TextView
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=" Budget :"
+                android:gravity="center"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:textSize="25dp"
+                android:id="@+id/eventTkET"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="expenseTk"
+                android:gravity="center"
+                />
 
 
-        <TextView
-            android:id="@+id/budgettesting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="%"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
+            <TextView
+                android:textSize="25dp"
+                android:id="@+id/targetbudgetTV"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=" Target Tk"
+                android:gravity="center"
+                android:textColor="#f40808"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+        </LinearLayout>
+
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"

@@ -8,10 +8,9 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -19,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,8 +31,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import coder.adnan.tourmate.tourmateapps1.ForecastClasses.ForeCastWeather;
 
 
 /**
@@ -52,6 +50,14 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
     private List<Events> events = new ArrayList<>();
     private FloatingActionButton fab;
     private Context context;
+    private AlertDialog.Builder mbuilder;
+    private View mview;
+    int Tkbudget;
+    int eventPosition;
+    String eventIdUpdate;
+    String EventName,EventStartLoc,EventEndLoc,EventDate,EventBudet;
+    EditText eventName,eventSndLocation,eventEndLocation,eventDate,eventBudget;
+    Button updateEvent;
 
     private  OnActiveFloatingAction fabAction;
 
@@ -66,6 +72,7 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
         this.context=context;
         this.fabAction= (OnActiveFloatingAction) context;
     }
+
 
 
     @Override
@@ -119,18 +126,6 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
           public void onClick(View view) {
               // event setup
               fabAction.evetnFabAdd();
-
-
-
-              //Intent navigationIntent=new Intent(context,EventExpandibleActivity.class);
-              //startActivity(navigationIntent);
-
-             /*
-              String keyId = userIDRef.push().getKey();
-              //String eventId, String eventName, int eventSDate, int eventEDate
-              Events event = new Events(keyId,"Dhaka","28/11/2018","30/11/2018");
-              userIDRef.child(keyId).setValue(event);
-           */
           }
       });
 
@@ -171,19 +166,60 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
 
     //*************************   Event Edit ****************************************
     @Override
-    public void EventEdit(String eventId) {
-        Toast.makeText(context, "Edit Event ID "+eventId, Toast.LENGTH_SHORT).show();
-        Events event = new Events(eventId, "Bangladesh Tour","Dhaka","Ctg","25/2/2018",500);
-        userIDRef.child(eventId).setValue(event);
-        Toast.makeText(context, "Edit is Successfull..", Toast.LENGTH_SHORT).show();
+    public void EventEdit(String eventId, int position) {
+
+        eventPosition=position;
+        eventIdUpdate=eventId;
+       // Toast.makeText(context, " Id :"+eventPosition, Toast.LENGTH_SHORT).show();
+        mbuilder=new AlertDialog.Builder(context);
+        mview=getLayoutInflater().inflate(R.layout.event_edit_layout_design,null);
+
+        eventName=mview.findViewById(R.id.eventET);
+        eventSndLocation=mview.findViewById(R.id.slocationET);
+        eventEndLocation=mview.findViewById(R.id.elocationalET);
+        eventDate=mview.findViewById(R.id.eventDatelET);
+        eventBudget=mview.findViewById(R.id.budgetET);
+
+        updateEvent=mview.findViewById(R.id.updateEventBTN);
+          if(events.get(eventPosition).getEventId()==eventId){
+             eventName.setText(events.get(eventPosition).getEventName());
+             eventSndLocation.setText(events.get(eventPosition).getEventLocation());
+             eventEndLocation.setText(events.get(eventPosition).getEventDestination());
+             eventDate.setText(events.get(eventPosition).getEventEDate());
+             //eventBudget.setText((int) events.get(eventPosition).getEventBudget());
+             eventBudget.setText(events.get(eventPosition).getEventBudget());
+
+              Toast.makeText(context, "Pic Ok", Toast.LENGTH_SHORT).show();
+          }
+          else{
+               Toast.makeText(context, "Not Pick Data Form FIreBase ", Toast.LENGTH_SHORT).show();
+              }
+          updateEvent.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+             EventName=eventName.getText().toString();
+             EventStartLoc=eventSndLocation.getText().toString();
+             EventEndLoc=eventEndLocation.getText().toString();
+             EventDate=eventDate.getText().toString();
+             EventBudet=eventBudget.getText().toString();
+             Tkbudget=Integer.parseInt(EventBudet);
+
+             Events event = new Events(eventIdUpdate,EventName,EventStartLoc,EventEndLoc, EventDate,250);
+             userIDRef.child(eventIdUpdate).setValue(event);
+             Toast.makeText(context, "Edit is Successfull...",Toast.LENGTH_SHORT).show();
+           }
+    });
+      mbuilder.setView(mview);
+      AlertDialog dialog=mbuilder.create();
+      dialog.show();
 
        // fabAction.evetnFabAdd();  //70 % task baki ase
+
     }
 
     //******************** Event Delete **************************************
     @Override
     public void EventDelete(String eventId) {
-        Toast.makeText(context, "Event ID"+eventId, Toast.LENGTH_SHORT).show();
         userIDRef.child(eventId).removeValue();
     }
 
@@ -191,8 +227,8 @@ public class EventCreateListFragment extends Fragment implements EventRecyclerAd
     public void EventInfo(String eventId) {
         fabAction.eventinfo();
     }
-    interface  OnActiveFloatingAction{
-        void  evetnFabAdd();
+    interface OnActiveFloatingAction{
+        void evetnFabAdd();
         void Logout();
         void eventinfo();
     }

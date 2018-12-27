@@ -50,7 +50,6 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="#aecbd2"
-
                 />
 
             <EditText
@@ -66,13 +65,9 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:background="#aecbd2"
-
                 />
 
         </LinearLayout>
-
-
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -84,7 +79,7 @@
             <EditText
                 android:id="@+id/eventDateET"
                 android:layout_width="0dp"
-                android:layout_weight="7"
+                android:layout_weight="6"
                 android:layout_height="match_parent"
                 android:hint="Enter Date"
                 android:gravity="center"
@@ -93,11 +88,13 @@
                 android:background="#fff"
                 />
 
-            <ImageView
+            <Button
+                android:id="@+id/datePickerBTN"
                 android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:layout_height="40dp"
-                android:src="@drawable/date_black_24dp"
+                android:text="Date"
+                android:textAllCaps="false"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 />

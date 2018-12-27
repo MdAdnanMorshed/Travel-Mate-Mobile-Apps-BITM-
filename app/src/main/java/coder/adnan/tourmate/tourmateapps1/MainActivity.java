@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements
         ft.commit();
     }
 
-
     @Override
     public void Logout() {
         fragmentManager = getSupportFragmentManager();

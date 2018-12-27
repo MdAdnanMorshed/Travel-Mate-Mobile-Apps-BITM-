@@ -47,8 +47,6 @@ public class LoginFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         auth=FirebaseAuth.getInstance();
         currentUser=auth.getCurrentUser();
-
-
     }
 
     @Override
